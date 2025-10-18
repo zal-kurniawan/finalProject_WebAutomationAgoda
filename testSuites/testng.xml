@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- <suite name="AllTestsSuite" verbose="1"> -->
+    <suite name="Annotation Execution Suite" >
+        <test name="Web Automation">
+        <parameter name="program"  value="Web Automation"/>
+            <classes>
+                <class name="runner.RunnerBookFlight"/>
+                <class name="runner.RunnerBookHotel"/>
+            </classes>
+        </test>
+    </suite>
+<!-- </suite> -->
