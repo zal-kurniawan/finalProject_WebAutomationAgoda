@@ -11,7 +11,7 @@ git clone https://github.com/zal-kurniawan/finalProject_WebAutomationAgoda.git
 ### 2. Navigate to the Project Directory
 
 ```
-cd webautomation_saucedemo
+cd finalProject_WebAutomationAgoda
 ```
 
 ### 3. Run Tests via Maven
