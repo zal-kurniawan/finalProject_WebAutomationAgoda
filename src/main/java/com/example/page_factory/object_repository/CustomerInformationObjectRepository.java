@@ -117,7 +117,10 @@ public class CustomerInformationObjectRepository {
     @FindBy(xpath = "//div[@datatestid = 'addon-last-chance-CEG_UPSELL']//button[@aria-label = 'close']")
     public WebElement buttonClosePopUpUpgradeLevel;
 
-    public By textTotalPriceFlight = By.xpath(
+    @FindBy(xpath = "//div[@data-component = 'pacFlightDetail']/div[1]//img")
+    public WebElement imageAirline;
+
+    public By textTotalPrice = By.xpath(
             "//div[@data-component = 'mob-flight-price-breakdown-wrapper']//dd[@data-component = 'mob-flight-price-total-desc']/span");
 
     public By alertBooking = By.xpath("//div[@data-testid = 'bf-user-drop-off-alert-modal']");

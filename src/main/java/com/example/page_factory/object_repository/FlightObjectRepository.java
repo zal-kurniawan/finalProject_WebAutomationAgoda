@@ -25,6 +25,9 @@ public class FlightObjectRepository {
     @FindBy(xpath = "//button[@data-component = 'flight-card-bookButton']")
     public WebElement buttonSelect;
 
+    @FindBy(xpath = "//button[@aria-expanded = 'true']//div[@data-testid = 'flightCard-flight-detail']//img")
+    public WebElement imageAirline;
+
     @FindBy(xpath = "//button[@aria-expanded = 'true']//span[@data-element-name = 'flight-price-breakdown']/div/div[3]/span[2]")
     public WebElement textPrice;
 

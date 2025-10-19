@@ -29,10 +29,12 @@ public class CustomerInformationPageStepDef {
         wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     }
 
-    @Then("User is navigate to Customer Information page and verify the price")
-    public void userIsNavigateToCustomerInformationPageAndVerifyThePrice() throws InterruptedException {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(customerInformationObject.textTotalPriceFlight));
-        String totalPriceActual = driver.findElement(customerInformationObject.textTotalPriceFlight).getText();
+    @Then("User is navigate to Customer Information page and verify airline and total price")
+    public void userIsNavigateToCustomerInformationPageAndVerifyAirlineAndToalPrice() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(customerInformationObject.textTotalPrice));
+        String airlineActual = customerInformationObject.imageAirline.getAttribute("alt");
+        Assert.assertEquals(airlineActual, FlightPageStepDef.airline, "Airline is incorrect");
+        String totalPriceActual = driver.findElement(customerInformationObject.textTotalPrice).getText();
         Assert.assertEquals(totalPriceActual, "Rp " + FlightPageStepDef.price, "Total Price is incorrect");
     }
 

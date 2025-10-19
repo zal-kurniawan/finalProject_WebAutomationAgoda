@@ -10,7 +10,7 @@ import io.cucumber.java.en.When;
 public class FlightPageStepDef {
     WebDriver driver;
     private FlightPage flightPage;
-    public static String price;
+    public static String price, airline;
 
     public FlightPageStepDef(Hooks hooks) {
         this.driver = Hooks.getDriver();
@@ -35,6 +35,7 @@ public class FlightPageStepDef {
     @And("User selects the first flight in the list to see details")
     public void userSelectTheFirstFlightInTheList() {
         flightPage.selectFistFlightOnList();
+        airline = flightPage.getAirlineOfFlight();
         price = flightPage.getPriceOfFlight();
     }
 

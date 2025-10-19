@@ -26,6 +26,10 @@ public class FlightPage extends AbstractComponent {
         flightObject.cardFirstFlight.click();
     }
 
+    public String getAirlineOfFlight() {
+        return flightObject.imageAirline.getAttribute("alt");
+    }
+
     public String getPriceOfFlight() {
         return flightObject.textPrice.getText();
     }

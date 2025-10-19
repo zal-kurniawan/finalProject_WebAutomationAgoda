@@ -11,7 +11,7 @@ Scenario Outline: User books a cheapest flight successfully
     When User click Cheapest tab
     And User selects the first flight in the list to see details
     And User click button select
-    Then User is navigate to Customer Information page and verify the price
+    Then User is navigate to Customer Information page and verify airline and total price
     When User fill Contact details data with "<firstNameContact>", "<lastNameContact>", "<emailContact>", "<countryContact>", "<countryCodeContact>", "<phoneNumberContact>"
     And User fill Passenger data with "<gender>", "<firstNamePassenger>", "<lastNamePassenger>", "<dateOfBirth>", "<nationality>", "<passportNumber>", "<countryPassenger>", "<passportExpiryDate>"
     And User click Continue to Payment button
@@ -35,7 +35,7 @@ Scenario Outline: User books a fastest flight successfully
     When User click Fastest tab
     And User selects the first flight in the list to see details
     And User click button select
-    Then User is navigate to Customer Information page and verify the price
+    Then User is navigate to Customer Information page and verify airline and total price
     When User fill Contact details data with "<firstNameContact>", "<lastNameContact>", "<emailContact>", "<countryContact>", "<countryCodeContact>", "<phoneNumberContact>"
     And User fill Passenger data with "<gender>", "<firstNamePassenger>", "<lastNamePassenger>", "<dateOfBirth>", "<nationality>", "<passportNumber>", "<countryPassenger>", "<passportExpiryDate>"
     And User click Continue to Payment button
