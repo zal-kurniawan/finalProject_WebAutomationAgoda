@@ -70,4 +70,24 @@ public class DashboardPageStepDef {
     public void userClickSearchButton() {
         dashboardPage.clickSearchButton();
     }
+
+    @When("User click Search Flights button without filling Oirign and Destination")
+    public void userClickSearchFlightsButtonWithoutFillingOiriginAndDestination() {
+        dashboardPage.clickSearchFlights();
+    }
+
+    @When("User click Search button without filling Destination")
+    public void userClickSearchButtonWithoutFillingDestination() {
+        dashboardPage.clickSearchButton();
+    }
+
+    @Then("User will see a failed flight search pop-up")
+    public void userWillSeeFailedFlightSearchPopUp() throws InterruptedException {
+        dashboardPage.verifyFailedFlightSearchPopUp();
+    }
+
+    @Then("User will see a failed hotel search pop-up")
+    public void userWillSeeFailedHotelSearchPopUp() throws InterruptedException {
+        dashboardPage.verifyFailedHotelSearchPopUp();
+    }
 }

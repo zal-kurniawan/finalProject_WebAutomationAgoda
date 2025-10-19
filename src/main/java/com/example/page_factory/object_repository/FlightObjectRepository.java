@@ -16,6 +16,9 @@ public class FlightObjectRepository {
     @FindBy(xpath = "//button[@data-testid = 'flights-quick-sort-item-Price-button']")
     public WebElement buttonCheapestFlight;
 
+    @FindBy(xpath = "//button[@data-testid = 'flights-quick-sort-item-Duration-button']")
+    public WebElement buttonFastestFlight;
+
     @FindBy(xpath = "//div[contains(@class, 'GridItem')][1]//div[@data-testid = 'web-refresh-flights-card']")
     public WebElement cardFirstFlight;
 

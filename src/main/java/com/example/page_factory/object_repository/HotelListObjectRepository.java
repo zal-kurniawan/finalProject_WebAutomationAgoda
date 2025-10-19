@@ -11,7 +11,10 @@ public class HotelListObjectRepository {
         PageFactory.initElements(driver, this);
     }
 
-    public By listHotel = By.xpath("//ol[contains(@class, 'hotel-list-container')]//li[@data-selenium = 'hotel-item']");
+    public By sectionSortBarHotel = By.xpath("//div[@data-element-name = 'sort-bar-container']");
+
+    @FindBy(xpath = "//button[@data-element-name = 'search-sort-price']")
+    public WebElement buttonSortLowestPrice;
 
     @FindBy(xpath = "//button[@data-element-name = 'search-sort-guest-rating']")
     public WebElement buttonSortTopReviewed;

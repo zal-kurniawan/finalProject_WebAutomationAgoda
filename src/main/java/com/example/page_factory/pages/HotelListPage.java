@@ -30,14 +30,20 @@ public class HotelListPage extends AbstractComponent {
     }
 
     public void sortingByTopReviewed(String sort) {
-        visibilityElement(hotelListObject.listHotel);
+        visibilityElement(hotelListObject.sectionSortBarHotel);
         hotelListObject.buttonSortTopReviewed.click();
         visibilityElement(hotelListObject.listSortTopReviewed);
         WebElement topReviewd = getTopReviewedBy(sort);
         topReviewd.findElement(hotelListObject.nameSortTopReviewed).click();
     }
 
-    public void selectFistHotelOnList() {
+    public void sortingByLowestPrice() {
+        visibilityElement(hotelListObject.sectionSortBarHotel);
+        hotelListObject.buttonSortLowestPrice.click();
+    }
+
+    public void selectFistHotelOnList() throws InterruptedException {
+        Thread.sleep(2000);
         hotelListObject.cardFirstHotel.click();
     }
 

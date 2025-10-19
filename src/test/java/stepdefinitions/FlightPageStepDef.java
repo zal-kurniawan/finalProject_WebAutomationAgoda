@@ -27,6 +27,11 @@ public class FlightPageStepDef {
         flightPage.clickCheapestTab();
     }
 
+    @When("User click Fastest tab")
+    public void userClickFastestTab() {
+        flightPage.clickFastestTab();
+    }
+
     @And("User selects the first flight in the list to see details")
     public void userSelectTheFirstFlightInTheList() {
         flightPage.selectFistFlightOnList();

@@ -17,6 +17,11 @@ public class FlightPage extends AbstractComponent {
         flightObject.buttonCheapestFlight.click();
     }
 
+    public void clickFastestTab() {
+        visibilityElement(flightObject.tabFlightsQuickSort);
+        flightObject.buttonFastestFlight.click();
+    }
+
     public void selectFistFlightOnList() {
         flightObject.cardFirstFlight.click();
     }

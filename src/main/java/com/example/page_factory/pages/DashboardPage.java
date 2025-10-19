@@ -133,4 +133,18 @@ public class DashboardPage extends AbstractComponent {
         dashboardObject.buttonSearchHotel.click();
     }
 
+    public void verifyFailedFlightSearchPopUp() throws InterruptedException {
+        visibilityElement(dashboardObject.popUpFailedFlightSearch);
+        WebElement popUpFailure = driver.findElement(dashboardObject.popUpFailedFlightSearch);
+        popUpFailure.isDisplayed();
+        Thread.sleep(3000);
+    }
+
+    public void verifyFailedHotelSearchPopUp() throws InterruptedException {
+        visibilityElement(dashboardObject.popUpFailedHotelSearch);
+        WebElement popUpFailure = driver.findElement(dashboardObject.popUpFailedHotelSearch);
+        popUpFailure.isDisplayed();
+        Thread.sleep(3000);
+    }
+
 }

@@ -77,4 +77,8 @@ public class DashboardObjectRepository {
 
     @FindBy(xpath = "//button[@data-selenium = 'searchButton']")
     public WebElement buttonSearchHotel;
+
+    public By popUpFailedFlightSearch = By.xpath("//div[@data-component = 'flight-error-modal']");
+
+    public By popUpFailedHotelSearch = By.xpath("//div[@data-element-name = 'search-box-modal-message']");
 }

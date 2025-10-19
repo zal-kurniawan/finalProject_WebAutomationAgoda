@@ -18,7 +18,7 @@ public class HotelDetailObjectRepository {
 
     public By cardRoom = By.xpath("//div[@data-selenium = 'RoomGrid-content']");
 
-    @FindBy(xpath = "//div[@data-selenium = 'RoomGrid-content']//div[@data-selenium = 'MasterRoom'][1]//button[@data-selenium = 'ChildRoomsList-bookButtonInput']")
+    @FindBy(xpath = "//div[@data-selenium = 'RoomGrid-content']//div[@data-selenium = 'MasterRoom'][1]//div[@data-selenium = 'ChildRoomsList-room'][1]//button[@data-selenium = 'ChildRoomsList-bookButtonInput']")
     public WebElement buttonBookNow;
 
 }

@@ -41,8 +41,13 @@ public class HotelListPageStepDef {
         hotelListPage.sortingByTopReviewed("All guests");
     }
 
+    @When("User sorting by 'Lowest Price First' on Hotel List page")
+    public void userSortingByLowestPriceFirstOnHotelListPage() {
+        hotelListPage.sortingByLowestPrice();
+    }
+
     @And("User click the first hotel in the list")
-    public void userClickTheFirstHotelInTheList() {
+    public void userClickTheFirstHotelInTheList() throws InterruptedException {
         hotelListPage.selectFistHotelOnList();
     }
 }
