@@ -60,15 +60,17 @@ public class CustomerInformationPage extends AbstractComponent {
     }
 
     public void fillContactDetails(String firstNameContact, String lastNameContact, String emailContact,
-            String countryContact, String countryCodeContact, String phoneNumberContact) {
+            String countryContact, String countryCodeContact, String phoneNumberContact) throws InterruptedException {
         visibilityElement(customerInformationObject.cartContactDetails);
         customerInformationObject.inputFirstNameContact.sendKeys(firstNameContact);
         customerInformationObject.inputLastNameContact.sendKeys(lastNameContact);
         customerInformationObject.inputEmailContact.sendKeys(emailContact);
         customerInformationObject.comboBoxCountryContact.click();
+        Thread.sleep(1000);
         customerInformationObject.inputSearchCountryContact.sendKeys(countryContact);
         customerInformationObject.radioButtonCountryContact.click();
         customerInformationObject.comboBoxCountryCodeContact.click();
+        Thread.sleep(1000);
         customerInformationObject.inputSearchCountryCodeContact.sendKeys(countryCodeContact);
         customerInformationObject.radioButtonCountryCodeContact.click();
         customerInformationObject.inputPhoneNumberContact.sendKeys(phoneNumberContact);
@@ -76,7 +78,7 @@ public class CustomerInformationPage extends AbstractComponent {
 
     public void fillPassengerDetails(String gender, String firstNamePassenger, String lastNamePassenger,
             String dateOfBirth, String nationality, String passportNumber, String countryPassenger,
-            String passportExpiryDate) {
+            String passportExpiryDate) throws InterruptedException {
         if (gender.equalsIgnoreCase("Male")) {
             customerInformationObject.radioButtonGenderMale.click();
         } else if (gender.equalsIgnoreCase("Female")) {
@@ -91,6 +93,7 @@ public class CustomerInformationPage extends AbstractComponent {
         monthBirth.findElement(customerInformationObject.textMonthOfBirth).click();
         customerInformationObject.inputYearOfBirth.sendKeys(dateOfBirthSplit[2]);
         customerInformationObject.comboBoxNationalityPassenger.click();
+        Thread.sleep(1000);
         customerInformationObject.inputSearchNationalityPassenger.sendKeys(nationality);
         customerInformationObject.radioButtonNationalityPassenger.click();
         if (passportFieldVisible()) {

@@ -38,7 +38,7 @@ public class CustomerInformationPageStepDef {
 
     @When("User fill Contact details data with {string}, {string}, {string}, {string}, {string}, {string}")
     public void userFillContactDetailsData(String firstNameContact, String lastNameContact, String emailContact,
-            String countryContact, String countryCodeContact, String phoneNumberContact) {
+            String countryContact, String countryCodeContact, String phoneNumberContact) throws InterruptedException {
         this.firstNameContact = firstNameContact;
         this.lastNameContact = lastNameContact;
         this.email = emailContact;
@@ -50,7 +50,7 @@ public class CustomerInformationPageStepDef {
     @And("User fill Passenger data with {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}")
     public void userFillPassengerData(String gender, String firstNamePassenger, String lastNamePassenger,
             String dateOfBirth, String nationality, String passportNumber, String countryPassenger,
-            String passportExpiryDate) {
+            String passportExpiryDate) throws InterruptedException {
         this.firstNamePassenger = firstNamePassenger;
         this.lastNamePassenger = lastNamePassenger;
         this.passportNumber = passportNumber;

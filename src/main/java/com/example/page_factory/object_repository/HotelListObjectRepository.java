@@ -23,6 +23,6 @@ public class HotelListObjectRepository {
 
     public By nameSortTopReviewed = By.xpath(".//span[@data-testid = 'title']");
 
-    @FindBy(xpath = "//ol[contains(@class, 'hotel-list-container')][1]//li[@data-selenium = 'hotel-item'][1]//div[@data-element-name = 'PropertyCardBaseJacket']")
-    public WebElement cardFirstHotel;
+    @FindBy(xpath = "//ol[contains(@class, 'hotel-list-container')][1]//li[@data-selenium = 'hotel-item'][1]//div[@data-element-name = 'PropertyCardBaseJacket']//h3")
+    public WebElement textNameHotelInFirstList;
 }

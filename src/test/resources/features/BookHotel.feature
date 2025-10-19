@@ -57,4 +57,3 @@ Scenario Outline: User can't search a Hotel without filling Destination
     Examples:
       | tab         |
       | hotels      |
-      | hotels      |

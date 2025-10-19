@@ -44,7 +44,7 @@ public class HotelListPage extends AbstractComponent {
 
     public void selectFistHotelOnList() throws InterruptedException {
         Thread.sleep(2000);
-        hotelListObject.cardFirstHotel.click();
+        hotelListObject.textNameHotelInFirstList.click();
     }
 
 }

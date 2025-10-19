@@ -57,4 +57,3 @@ Scenario Outline: User can't search a flight without filling Origin and Destinat
     Examples:
       | tab         |
       | flights     |
-      | flights     |
