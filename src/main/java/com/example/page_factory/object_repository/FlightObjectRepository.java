@@ -19,11 +19,18 @@ public class FlightObjectRepository {
     @FindBy(xpath = "//button[@data-testid = 'flights-quick-sort-item-Duration-button']")
     public WebElement buttonFastestFlight;
 
+    @FindBy(xpath = "//div[@data-component = 'flight-card-container']//div[contains(@class , 'Grid__GridStyled')]/div[1]//button[@aria-label = 'Expand flight details']")
+    public WebElement cardFirstFlight;
+
     @FindBy(xpath = "//span[text() = 'Cheapest']/ancestor::div[@data-testid = 'flightCard-flight-detail']")
-    public WebElement cardAirlineCheapest;
+    public WebElement cardFlightCheapest;
+
+    public By badgeCheapest = By.xpath("//span[text() = 'Cheapest']");
 
     @FindBy(xpath = "//span[text() = 'Fastest']/ancestor::div[@data-testid = 'flightCard-flight-detail']")
-    public WebElement cardAirlineFastest;
+    public WebElement cardFlightFastest;
+
+    public By badgeFastest = By.xpath("//span[text() = 'Fastest']");
 
     @FindBy(xpath = "//button[@data-component = 'flight-card-bookButton']")
     public WebElement buttonSelect;

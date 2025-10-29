@@ -1,7 +1,7 @@
 Feature: Book Flight Scenario
 
 Scenario Outline: User books a cheapest flight successfully
-    When User select tab "<tab>"
+    When User select tab "flights"
     Then The flight search form should be displayed
     When User searches for a flight from "<flyFrom>" to "<flyTo>"
     And User select Departure date
@@ -19,13 +19,13 @@ Scenario Outline: User books a cheapest flight successfully
     Then User can verify price, contact, and passenger detail in Payment Information Page with "<firstNameContact>", "<lastNameContact>", "<emailContact>", "<phoneNumberContact>", "<firstNamePassenger>", "<lastNamePassenger>"
 
     Examples:
-      | tab         | flyFrom    | flyTo        | class              | firstNameContact   | lastNameContact | emailContact    | countryContact  | countryCodeContact  | phoneNumberContact  | gender  | firstNamePassenger |  lastNamePassenger | dateOfBirth     | nationality | passportNumber | countryPassenger | passportExpiryDate    |
-      | flights     | Jakarta    | Singapore    | economy            |  Budi              | Sudarsono       | budi@gmail.com  | Singapore       |  Singapore          | 80932049281         | Male    | Budi               |   Sudarsono        | 20 May 1987     | Indonesia   | 4281209        |  Indonesia       |  10 October 2030      |
-      | flights     | Singapore  | Jakarta      | economy            |  Susi              | Sulastri        | susi@gmail.com  | Malaysia        |  Malaysia           | 84029328122         | Female  | Susi               |   Sulastri         | 8 August 1995   | Indonesia   | 5481482        |  Indonesia       |  14 June 2035         |
+      | flyFrom    | flyTo        | class              | firstNameContact   | lastNameContact | emailContact    | countryContact  | countryCodeContact  | phoneNumberContact  | gender  | firstNamePassenger |  lastNamePassenger | dateOfBirth     | nationality | passportNumber | countryPassenger | passportExpiryDate    |
+      | Jakarta    | Singapore    | economy            |  Budi              | Sudarsono       | budi@gmail.com  | Singapore       |  Singapore          | 80932049281         | Male    | Budi               |   Sudarsono        | 20 May 1987     | Indonesia   | 4281209        |  Indonesia       |  10 October 2030      |
+      | Singapore  | Jakarta      | economy            |  Susi              | Sulastri        | susi@gmail.com  | Malaysia        |  Malaysia           | 84029328122         | Female  | Susi               |   Sulastri         | 8 August 1995   | Indonesia   | 5481482        |  Indonesia       |  14 June 2035         |
 
 
 Scenario Outline: User books a fastest flight successfully
-    When User select tab "<tab>"
+    When User select tab "flights"
     Then The flight search form should be displayed
     When User searches for a flight from "<flyFrom>" to "<flyTo>"
     And User select Departure date
@@ -43,17 +43,13 @@ Scenario Outline: User books a fastest flight successfully
     Then User can verify price, contact, and passenger detail in Payment Information Page with "<firstNameContact>", "<lastNameContact>", "<emailContact>", "<phoneNumberContact>", "<firstNamePassenger>", "<lastNamePassenger>"
 
     Examples:
-      | tab         | flyFrom    | flyTo        | class              | firstNameContact   | lastNameContact | emailContact    | countryContact  | countryCodeContact  | phoneNumberContact  | gender  | firstNamePassenger |  lastNamePassenger | dateOfBirth     | nationality | passportNumber | countryPassenger | passportExpiryDate    |
-      | flights     | Jakarta    | Singapore    | economy            |  Budi              | Sudarsono       | budi@gmail.com  | Singapore       |  Singapore          | 80932049281         | Male    | Budi               |   Sudarsono        | 20 May 1987     | Indonesia   | 4281209        |  Indonesia       |  10 October 2030      |
-      | flights     | Singapore  | Jakarta      | economy            |  Susi              | Sulastri        | susi@gmail.com  | Malaysia        |  Malaysia           | 84029328122         | Female  | Susi               |   Sulastri         | 8 August 1995   | Indonesia   | 5481482        |  Indonesia       |  14 June 2035         |
+      | flyFrom    | flyTo        | class              | firstNameContact   | lastNameContact | emailContact    | countryContact  | countryCodeContact  | phoneNumberContact  | gender  | firstNamePassenger |  lastNamePassenger | dateOfBirth     | nationality | passportNumber | countryPassenger | passportExpiryDate    |
+      | Jakarta    | Singapore    | economy            |  Budi              | Sudarsono       | budi@gmail.com  | Singapore       |  Singapore          | 80932049281         | Male    | Budi               |   Sudarsono        | 20 May 1987     | Indonesia   | 4281209        |  Indonesia       |  10 October 2030      |
+      | Singapore  | Jakarta      | economy            |  Susi              | Sulastri        | susi@gmail.com  | Malaysia        |  Malaysia           | 84029328122         | Female  | Susi               |   Sulastri         | 8 August 1995   | Indonesia   | 5481482        |  Indonesia       |  14 June 2035         |
 
 
 Scenario Outline: User can't search a flight without filling Origin and Destination 
-    When User select tab "<tab>"
+    When User select tab "flights"
     Then The flight search form should be displayed
     When User click Search Flights button without filling Oirign and Destination
     Then User will see a failed flight search pop-up
-    
-    Examples:
-      | tab         |
-      | flights     |

@@ -43,7 +43,6 @@ public class HotelDetailPageStepDef {
 
     @And("User click Book Now button on the first room in the list")
     public void userClickBookNowButtonOnTheFirstRoomInTheList() throws InterruptedException {
-        Thread.sleep(2000);
         hotelDetailPage.clickBookNowButtonOnTheFirstRoom();
     }
 }

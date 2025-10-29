@@ -48,15 +48,11 @@ public class CustomerInformationPage extends AbstractComponent {
 
     public boolean passportFieldVisible() {
         List<WebElement> passportFields = driver.findElements(customerInformationObject.fieldPassportNumber);
-        System.out.println("PASSPORT FIELD: " + passportFields);
         if (!passportFields.isEmpty() && passportFields.get(0).isDisplayed()) {
-            System.out.println("TRUE");
             return true;
         } else {
-            System.out.println("FALSE");
             return false;
         }
-
     }
 
     public void fillContactDetails(String firstNameContact, String lastNameContact, String emailContact,

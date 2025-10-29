@@ -1,7 +1,7 @@
 Feature: Book Hotel Scenario
 
 Scenario Outline: User successfully books a hotel after sorting by 'Top reviewed by all guests'
-    When User select tab "<tab>"
+    When User select tab "hotels"
     Then The hotel search form should be displayed
     When User search destination "<destination>"
     And User selects the check in and check out date
@@ -19,13 +19,13 @@ Scenario Outline: User successfully books a hotel after sorting by 'Top reviewed
     Then User is navigate to Payment Information page
 
      Examples:
-      | tab     |   destination     |   rooms   |   guests  |   firstName   |   lastName    |   email           |   country     |   phoneNumber     |   specialRequest          |
-      | hotels  |   Bandung         |   2       |      4    |   Budi        |    Sudarsono  |   budi@gmail.com  |   Indonesia   |   08429384212     |   Smoking - TwinBed       |
-      | hotels  |   Malang          |   3       |      5    |   Susi        |    Sulastri   |   susi@gmail.com  |   Japan       |   08342194729     |   NonSmoking - LargeBed   |
+      | destination     |   rooms   |   guests  |   firstName   |   lastName    |   email           |   country     |   phoneNumber     |   specialRequest          |
+      | Bandung         |   2       |      4    |   Budi        |    Sudarsono  |   budi@gmail.com  |   Indonesia   |   08429384212     |   Smoking - TwinBed       |
+      | Malang          |   3       |      5    |   Susi        |    Sulastri   |   susi@gmail.com  |   Japan       |   08342194729     |   NonSmoking - LargeBed   |
 
 
 Scenario Outline: User successfully books a hotel after sorting by 'Lowest Price First'
-    When User select tab "<tab>"
+    When User select tab "hotels"
     Then The hotel search form should be displayed
     When User search destination "<destination>"
     And User selects the check in and check out date
@@ -43,17 +43,13 @@ Scenario Outline: User successfully books a hotel after sorting by 'Lowest Price
     Then User is navigate to Payment Information page
 
      Examples:
-      | tab     |   destination     |   rooms   |   guests  |   firstName   |   lastName    |   email           |   country     |   phoneNumber     |   specialRequest          |
-      | hotels  |   Bandung         |   2       |      4    |   Budi        |    Sudarsono  |   budi@gmail.com  |   Indonesia   |   08429384212     |   Smoking - TwinBed       |
-      | hotels  |   Malang          |   3       |      5    |   Susi        |    Sulastri   |   susi@gmail.com  |   Japan       |   08342194729     |   NonSmoking - LargeBed   |
+      | destination     |   rooms   |   guests  |   firstName   |   lastName    |   email           |   country     |   phoneNumber     |   specialRequest          |
+      | Bandung         |   2       |      4    |   Budi        |    Sudarsono  |   budi@gmail.com  |   Indonesia   |   08429384212     |   Smoking - TwinBed       |
+      | Malang          |   3       |      5    |   Susi        |    Sulastri   |   susi@gmail.com  |   Japan       |   08342194729     |   NonSmoking - LargeBed   |
 
 
 Scenario Outline: User can't search a Hotel without filling Destination 
-    When User select tab "<tab>"
+    When User select tab "hotels"
     Then The hotel search form should be displayed
     When User click Search button without filling Destination
     Then User will see a failed hotel search pop-up
-
-    Examples:
-      | tab         |
-      | hotels      |

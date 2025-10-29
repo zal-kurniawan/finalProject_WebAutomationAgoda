@@ -101,8 +101,8 @@ public class DashboardPage extends AbstractComponent {
     }
 
     public void selectCheckInAndCheckOut() {
-        dashboardObject.selectDateDynamic(geDateDynamic(1)).click();
-        dashboardObject.selectDateDynamic(geDateDynamic(5)).click();
+        dashboardObject.selectDateDynamic(geDateDynamic(4)).click();
+        dashboardObject.selectDateDynamic(geDateDynamic(9)).click();
     }
 
     public void setRoomAndGuest(int rooms, int guests) {
