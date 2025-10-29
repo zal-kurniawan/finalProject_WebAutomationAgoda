@@ -9,7 +9,7 @@ Scenario Outline: User books a cheapest flight successfully
     And User click Search Flights button
     Then User is navigate to Flights List page
     When User click Cheapest tab
-    And User selects the first flight in the list to see details
+    And User selects the flight with the cheapest badge in the list to see details
     And User click button select
     Then User is navigate to Customer Information page and verify airline and total price
     When User fill Contact details data with "<firstNameContact>", "<lastNameContact>", "<emailContact>", "<countryContact>", "<countryCodeContact>", "<phoneNumberContact>"
@@ -33,7 +33,7 @@ Scenario Outline: User books a fastest flight successfully
     And User click Search Flights button
     Then User is navigate to Flights List page
     When User click Fastest tab
-    And User selects the first flight in the list to see details
+    And User selects the flight with the fastest badge in the list to see details
     And User click button select
     Then User is navigate to Customer Information page and verify airline and total price
     When User fill Contact details data with "<firstNameContact>", "<lastNameContact>", "<emailContact>", "<countryContact>", "<countryCodeContact>", "<phoneNumberContact>"

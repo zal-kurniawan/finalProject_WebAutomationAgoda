@@ -22,8 +22,12 @@ public class FlightPage extends AbstractComponent {
         flightObject.buttonFastestFlight.click();
     }
 
-    public void selectFistFlightOnList() {
-        flightObject.cardFirstFlight.click();
+    public void selectAirline(String type) {
+        if (type.equalsIgnoreCase("cheapest")) {
+            flightObject.cardAirlineCheapest.click();
+        } else if (type.equalsIgnoreCase("fastest")) {
+            flightObject.cardAirlineFastest.click();
+        }
     }
 
     public String getAirlineOfFlight() {

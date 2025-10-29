@@ -32,9 +32,16 @@ public class FlightPageStepDef {
         flightPage.clickFastestTab();
     }
 
-    @And("User selects the first flight in the list to see details")
-    public void userSelectTheFirstFlightInTheList() {
-        flightPage.selectFistFlightOnList();
+    @And("User selects the flight with the cheapest badge in the list to see details")
+    public void userSelectsTheFlightWithTheCheapestBadgeInTheList() {
+        flightPage.selectAirline("cheapest");
+        airline = flightPage.getAirlineOfFlight();
+        price = flightPage.getPriceOfFlight();
+    }
+
+    @And("User selects the flight with the fastest badge in the list to see details")
+    public void userSelectsTheFlightWithTheFastestBadgeInTheList() {
+        flightPage.selectAirline("fastest");
         airline = flightPage.getAirlineOfFlight();
         price = flightPage.getPriceOfFlight();
     }
