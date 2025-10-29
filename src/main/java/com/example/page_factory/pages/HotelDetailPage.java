@@ -1,11 +1,8 @@
 package com.example.page_factory.pages;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import com.example.abstractcomponents.AbstractComponent;
 import com.example.page_factory.object_repository.HotelDetailObjectRepository;
 
