@@ -1,5 +1,9 @@
 Feature: Book Hotel Scenario
 
+#Bisa tambahkan background jika ada step yang sama di setiap scenario
+# Background:
+#   Given User select tab "flights"
+#   And The flight search form should be displayed
 Scenario Outline: User successfully books a hotel after sorting by 'Top reviewed by all guests'
     When User select tab "hotels"
     Then The hotel search form should be displayed
@@ -47,8 +51,8 @@ Scenario Outline: User successfully books a hotel after sorting by 'Lowest Price
       | Bandung         |   2       |      4    |   Budi        |    Sudarsono  |   budi@gmail.com  |   Indonesia   |   08429384212     |   Smoking - TwinBed       |
       | Malang          |   3       |      5    |   Susi        |    Sulastri   |   susi@gmail.com  |   Japan       |   08342194729     |   NonSmoking - LargeBed   |
 
-
-Scenario Outline: User can't search a Hotel without filling Destination 
+# Kalau tidak ada data test bisa tanpa Outlines
+Scenario: User can't search a Hotel without filling Destination 
     When User select tab "hotels"
     Then The hotel search form should be displayed
     When User click Search button without filling Destination

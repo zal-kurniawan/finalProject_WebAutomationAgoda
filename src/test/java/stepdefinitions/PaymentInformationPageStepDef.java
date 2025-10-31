@@ -17,30 +17,30 @@ public class PaymentInformationPageStepDef {
     public PaymentInformationPageStepDef(Hooks hooks) {
         this.driver = Hooks.getDriver();
         paymentObject = new PaymentInformationObjectRepository(driver);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(30));  // wait ini bisa dipake di semua step definition jadi better dibuat di abstract component 
     }
 
     @Then("User can verify price, contact, and passenger detail in Payment Information Page with {string}, {string}, {string}, {string}, {string}, {string}")
     public void userCanVerifyPriceContactPassengerDetailInPaymentInformationPage(String firstNameContact,
             String lastNameContact, String emailContact, String phoneNumberContact, String firstNamePassenger,
             String lastNamePassenger) throws InterruptedException {
-        Thread.sleep(3000);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(paymentObject.sectionContact));
-        String nameContact = paymentObject.textNameContact.getText();
+        Thread.sleep(3000); // thread sleep ini bisa dihindari dengan menunggu visibility element tertentu dan bisa dipindahkan ke abstract component
+        wait.until(ExpectedConditions.visibilityOfElementLocated(paymentObject.sectionContact)); // wait element ini bisa dibuat di PaymentInformationPage, nanti call abstract component yang visibilityElement
+        String nameContact = paymentObject.textNameContact.getText(); // untuk get text ini bisa diimplement di PaymentInformationPage, buat method getNameContact() return nameContact
         Assert.assertEquals(nameContact, (firstNameContact.toUpperCase() + " " + lastNameContact.toUpperCase()),
                 "Contact Name is incorrect");
-        String email = paymentObject.textEmailContact.getText();
+        String email = paymentObject.textEmailContact.getText(); // untuk get text ini bisa diimplement di PaymentInformationPage, buat method getEmailContact() return email
         Assert.assertEquals(email, emailContact, "Email Contact is incorrect");
-        String[] phoneNumber = paymentObject.textPhoneNumberContact.getText().split(" ");
+        String[] phoneNumber = paymentObject.textPhoneNumberContact.getText().split(" "); // untuk get text ini bisa diimplement di PaymentInformationPage, buat method getPhoneNumberContact() return phoneNumber
         Assert.assertEquals(phoneNumber[1], phoneNumberContact, "Phone Number Contact is incorrect");
-        String namePassenger = paymentObject.textNamePassenger.getText();
+        String namePassenger = paymentObject.textNamePassenger.getText();// untuk get text ini bisa diimplement di PaymentInformationPage, buat method getNamePassenger() return namePassenger
         Assert.assertEquals(namePassenger, (firstNamePassenger.toUpperCase() + " " + lastNamePassenger.toUpperCase()),
                 "Passenger Name is incorrect");
     }
 
     @Then("User is navigate to Payment Information page")
     public void userIsNavigateToPaymentInformationPage() throws InterruptedException {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(paymentObject.sectionPayment));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(paymentObject.sectionPayment)); // wait element ini bisa dibuat di PaymentInformationPage, nanti call abstract component yang visibilityElement
         Thread.sleep(3000);
     }
 }

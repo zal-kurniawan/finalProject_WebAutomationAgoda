@@ -36,11 +36,24 @@ public class HotelListPageStepDef {
         }
     }
 
+    /*
+     * Stepdefenition ini bisa dibuat lebih general dengan menambahkan parameter sorting yang dipilih
+     * karena params top reviewed ada beberapa diantaranya 'All guests', 'Couples', 'Families', dll
+     * misal: public void userSortingByTopReviewedBy(String guestType) { ... }
+     * lalu di dalam method tersebut, panggil hotelListPage.sortingByTopReviewed(guestType);
+     * dengan begitu, tidak perlu membuat method terpisah untuk setiap jenis guest
+     */
     @When("User sorting by 'Top reviewed by all guests' on Hotel List page")
     public void userSortingByTopReviewedByAllGuestesOnHotelListPage() {
         hotelListPage.sortingByTopReviewed("All guests");
     }
 
+    /*
+     * sorting disini bisa digabung menjadi satu method dengan parameter sorting yang dipilih
+     * misal: public void userSortingBy(String sortingType) { ... }
+     * lalu di dalam method tersebut, panggil hotelListPage.sortingBy(sortingType);
+     * dengan begitu, tidak perlu membuat dua method terpisah untuk 'Lowest Price First' dan 'Top reviewed by all guests'
+     */
     @When("User sorting by 'Lowest Price First' on Hotel List page")
     public void userSortingByLowestPriceFirstOnHotelListPage() {
         hotelListPage.sortingByLowestPrice();

@@ -1,5 +1,9 @@
 Feature: Book Flight Scenario
 
+#Bisa tambahkan background jika ada step yang sama di setiap scenario
+# Background:
+#   Given User select tab "flights"
+#   And The flight search form should be displayed
 Scenario Outline: User books a cheapest flight successfully
     When User select tab "flights"
     Then The flight search form should be displayed
@@ -48,7 +52,8 @@ Scenario Outline: User books a fastest flight successfully
       | Singapore  | Jakarta      | economy            |  Susi              | Sulastri        | susi@gmail.com  | Malaysia        |  Malaysia           | 84029328122         | Female  | Susi               |   Sulastri         | 8 August 1995   | Indonesia   | 5481482        |  Indonesia       |  14 June 2035         |
 
 
-Scenario Outline: User can't search a flight without filling Origin and Destination 
+# Kalau tidak ada data test bisa tanpa Outlines
+Scenario: User can't search a flight without filling Origin and Destination 
     When User select tab "flights"
     Then The flight search form should be displayed
     When User click Search Flights button without filling Oirign and Destination

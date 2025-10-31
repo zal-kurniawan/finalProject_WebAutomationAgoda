@@ -19,6 +19,9 @@ public class FlightPageStepDef {
 
     @Then("User is navigate to Flights List page")
     public void userIsNavigateToFlightsListPage() throws InterruptedException {
+        /*
+         * Bisa ditambahkan verifikasi bahwa element sudah ada, jadi tidak hanya mengandalkan sleep, misal dengan menunggu visibility element tertentu
+         */
         Thread.sleep(2000);
     }
 
@@ -31,6 +34,20 @@ public class FlightPageStepDef {
     public void userClickFastestTab() {
         flightPage.clickFastestTab();
     }
+
+    /*
+     * Untuk step definition memilih flight dengan badge tertentu, bisa digabung menjadi satu method dengan parameter badge yang dipilih
+     * Misal: public void userSelectsTheFlightWithBadge(String badgeType) { ... }
+     * Lalu di dalam method tersebut, panggil flightPage.selectAirline(badgeType);
+     * Dengan begitu, tidak perlu membuat dua method terpisah untuk cheapest dan fastest
+     * Contoh implementasi:
+     * @And("User selects the flight with the {string} badge in the list to see details")
+     * public void userSelectsTheFlightWithTheBadgeInTheList(String badgeType) {
+     *     flightPage.selectAirline(badgeType);
+     *     airline = flightPage.getAirlineOfFlight();
+     *     price = flightPage.getPriceOfFlight();
+     * }
+     */
 
     @And("User selects the flight with the cheapest badge in the list to see details")
     public void userSelectsTheFlightWithTheCheapestBadgeInTheList() {
@@ -45,6 +62,7 @@ public class FlightPageStepDef {
         airline = flightPage.getAirlineOfFlight();
         price = flightPage.getPriceOfFlight();
     }
+
 
     @And("User click button select")
     public void userClickButtonSelect() {
