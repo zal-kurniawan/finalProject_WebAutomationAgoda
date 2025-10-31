@@ -23,6 +23,9 @@ public class DashboardPageStepDef {
 
     @Then("The flight search form should be displayed")
     public void theFlightSearchFromShouldBeDisplayed() throws InterruptedException {
+        /*
+         * Bisa ditambahkan verifikasi bahwa element sudah ada, jadi tidak hanya mengandalkan sleep
+         */
         Thread.sleep(1000);
     }
 
@@ -48,7 +51,9 @@ public class DashboardPageStepDef {
 
     @Then("The hotel search form should be displayed")
     public void theHotelSearchFromShouldBeDisplayed() throws InterruptedException {
-
+        /*
+         * Kalau tidak ada implementasi, lebih baik dihapus saja method ini
+         */
     }
 
     @When("User search destination {string}")

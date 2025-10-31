@@ -51,6 +51,11 @@ public class DashboardPage extends AbstractComponent {
         return null;
     }
 
+
+    /*
+     * untuk method getDateDynamic adalah general function untuk mendapatkan tanggal dinamis, jadi bisa dipindahkan ke utils, nanti dibuat aja class Helper
+     * Untuk implement getDateDynamic di page lain, tinggal panggil Helper.geDateDynamic(plusDay)
+     */
     public String geDateDynamic(int plusDay) {
         LocalDate today = LocalDate.now();
         LocalDate tomorrow = today.plusDays(plusDay);

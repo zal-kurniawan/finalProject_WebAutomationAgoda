@@ -21,7 +21,7 @@ public class Hooks {
     public void setUp() throws IOException, InterruptedException {
         Properties properties = new Properties();
         FileInputStream fileInputStream = new FileInputStream(
-                "/Users/rizalkurniawan/Documents/Bootcamp After Office/finalproject_web/src/main/resources/GlobalData.properties");
+                "../finalProject_WebAutomationAgoda/src/main/resources/GlobalData.properties");
         properties.load(fileInputStream);
         String browserName = properties.getProperty("browser");
         if (browserName.equalsIgnoreCase("chrome")) {

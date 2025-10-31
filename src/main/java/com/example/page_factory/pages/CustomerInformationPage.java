@@ -16,6 +16,11 @@ public class CustomerInformationPage extends AbstractComponent {
         this.driver = driver;
     }
 
+
+    /*
+     * untuk method splitDate adalah general function untuk memisahkan tanggal yang berformat DD MMMM YYYY menjadi array of string
+     * bisa dipindahkan ke utils, nanti dibuat aja class Helper
+     */
     public String[] splitDate(String date) {
         String[] split = date.split("\\s+");
         return split;
@@ -46,7 +51,7 @@ public class CustomerInformationPage extends AbstractComponent {
         return null;
     }
 
-    public boolean passportFieldVisible() {
+    public boolean isPassportFieldVisible() {
         List<WebElement> passportFields = driver.findElements(customerInformationObject.fieldPassportNumber);
         if (!passportFields.isEmpty() && passportFields.get(0).isDisplayed()) {
             return true;
@@ -92,7 +97,7 @@ public class CustomerInformationPage extends AbstractComponent {
         Thread.sleep(1000);
         customerInformationObject.inputSearchNationalityPassenger.sendKeys(nationality);
         customerInformationObject.radioButtonNationalityPassenger.click();
-        if (passportFieldVisible()) {
+        if (isPassportFieldVisible()) {
             customerInformationObject.inputPassportNumber.sendKeys(passportNumber);
             customerInformationObject.comboBoxCountryPassenger.click();
             customerInformationObject.inputSearchCountryPassenger.sendKeys(countryPassenger);
@@ -142,7 +147,7 @@ public class CustomerInformationPage extends AbstractComponent {
 
     public void clickButtonNext() throws InterruptedException {
         scrollDown();
-        Thread.sleep(1000);
+        Thread.sleep(1000); // Bisa diganti dengan wait tertentu untuk memastikan element sudah clickable
         customerInformationObject.buttonNextFinalStep.click();
     }
 

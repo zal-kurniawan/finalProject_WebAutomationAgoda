@@ -34,7 +34,7 @@ public class HotelDetailPage extends AbstractComponent {
     }
 
     public void clickBookNowButtonOnTheFirstRoom() throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(2000); // Bisa diganti dengan wait tertentu untuk memastikan element sudah clickable
         if (versionCardRoomVisible().equalsIgnoreCase("New")) {
             hotelDetailObject.buttonBookNowNewVersion.click();
         } else if (versionCardRoomVisible().equalsIgnoreCase("Old")) {

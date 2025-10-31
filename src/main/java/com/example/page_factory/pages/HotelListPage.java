@@ -34,7 +34,7 @@ public class HotelListPage extends AbstractComponent {
         hotelListObject.buttonSortTopReviewed.click();
         visibilityElement(hotelListObject.listSortTopReviewed);
         WebElement topReviewd = getTopReviewedBy(sort);
-        topReviewd.findElement(hotelListObject.nameSortTopReviewed).click();
+        topReviewd.findElement(hotelListObject.nameSortTopReviewed).click(); 
     }
 
     public void sortingByLowestPrice() {
@@ -43,7 +43,7 @@ public class HotelListPage extends AbstractComponent {
     }
 
     public void selectFistHotelOnList() throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(2000); // Bisa diganti dengan wait tertentu untuk memastikan element sudah clickable
         hotelListObject.textNameHotelInFirstList.click();
     }
 
